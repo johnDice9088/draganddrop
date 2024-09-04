@@ -1,0 +1,165 @@
+<!-- <div  >
+<section class="d-flex">
+<div class="align-content-center col-4"><p>Branch Code</p>
+<div class="d-grid gap-4 p-2">
+    <div class="border py-5 bg-body-secondary" *ngFor="let item of filteredBranchCodeManager">
+    <p class="text-center">{{item}}</p>
+    </div>
+</div>
+</div>
+
+<div class="col-4"><p>FRM</p>
+    <div class="d-grid gap-4 p-2">
+        <div  *ngFor="let item of filteredBranchCodeManager">
+        <div class="border py-1 bg-body-secondary" *ngFor="let element of createdJson[item] ">
+            <p>FRM Id - {{element.id}}</p>
+            <p>FRM Name - {{element.name}}</p>
+        </div>
+    </div>
+    </div>
+ </div>
+
+ <div class="col-4"><p>kivistars</p>
+    <div class="d-grid gap-4 p-2">
+        <div  *ngFor="let item of filteredBranchCodeManager">
+        <div  *ngFor="let element of createdJson[item] ">
+        <div class="border py-1 bg-body-secondary"  *ngFor="let Kivist of element.kivistars ">
+            <p>Kivistar Id - {{Kivist.id}}</p>
+            <p>Kivistar Name - {{Kivist.name}}</p>
+        </div>
+    </div>
+    </div>
+    
+ </div>
+ </div>
+</section>
+</div> -->
+
+
+<!-- <div class="d-flex">
+    <div class="align-content-center col-4 ">
+        </div>
+    </div> -->
+
+    <!-- <div cdkDropListGroup>
+        <div class="example-container">
+          <h2>To do</h2>
+      
+          <div
+            cdkDropList
+            [cdkDropListData]="filteredBranchCodeManager"
+            class="example-list"
+           >
+            <div class="example-box" *ngFor="let item of filteredBranchCodeManager" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      
+        <div class="example-container">
+          <h2>Done</h2>
+          <div *ngFor="let it of filteredBranchCodeManager" >
+          <div
+            cdkDropList
+            [cdkDropListData]="createdJson[it]"
+            class="example-list">
+            
+            <div class="example-box" *ngFor="let element of createdJson[it]" cdkDrag>{{element.id}}{{element.name}}</div>
+          </div>
+        </div>
+        </div>
+      </div> -->
+      <!-- app.component.html -->
+<!-- <table>
+    <thead>
+      <tr>
+        <th>Branch Code</th>
+        <th>ID, Name</th>
+        <th>Siblings (ID, Name)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredBranchCodeManager">
+        <td>{{ item }}</td>
+        <td *ngFor="let element of createdJson[item]">
+          <div class="row">
+            <div class="column"><ul *ngFor="let element of createdJson[item]">
+                <li >
+                  {{ element.id }}, {{ element.name }}
+                </li>
+              </ul></div>
+          </div>
+        </td>
+        <td> <div class="column" *ngFor="let element of createdJson[item]">
+            <ul *ngFor="let Kivist of element.kivistars">
+            <li >
+              {{ Kivist.id }}, {{ Kivist.name }}
+            </li>
+          </ul></div>
+        </td>
+      </tr>
+    </tbody>
+  </table> -->
+ 
+  
+<table >
+   <thead> <tr class="border-5 bordrigh">
+        <th class="col-4 bordrigh text-center">Branch Code</th>
+        <th class="col-4 bordrigh text-center">FRM</th>
+        <th class="col-4 bordrigh text-center">kivistars</th>
+        </tr>
+        </thead>
+        <tbody cdkDropListGroup >
+            <tr class="text-center border-5" *ngFor="let item of filteredBranchCodeManager">
+              <td >
+                <div class="border py-5 bg-body-secondary d-grid">  
+                {{item}}
+             </div> 
+            </td>
+
+            <td >
+                <div
+                cdkDropList
+             class="example-list"
+              >
+                <div  class="border py-5 bg-body-secondary" *ngFor="let element of createdJson[item]" [cdkDragLockAxis]="'y'" cdkDrag > 
+                   {{element.id}}
+                    {{element.name}}
+                </div>
+                </div> 
+            </td>
+            <td class="d-grid">
+              <div class="d-grid gap-4">
+              <div class="d-grid gap-4  separatediv" *ngFor="let element of createdJson[item]">
+                <div class="border py-5 bg-body-secondary d-grid ">
+                  <div
+                  cdkDropList
+                  [cdkDropListData]="element.kivistars"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event,element)"> 
+                <div class="border py-5 bg-body-secondary d-grid" *ngFor="let Kivist of element.kivistars" [cdkDragLockAxis]="'y'" cdkDrag>       
+                  <!-- <p *ngIf="element.kivistars !== this.newArr">hello</p> -->
+
+                  <p class="text-center">{{ Kivist.id }}</p>
+                   <p class="text-center">{{ Kivist.name }} </p>
+                   <p class="text-center">{{ Kivist.reportingTo }} </p>
+
+                </div>
+                <div class="border py-5 bg-body-secondary d-grid" *ngIf="element.kivistars?.length == 0">no kivistars</div>
+              </div>
+              </div>
+              </div>
+              </div>
+          </td>     
+                </tr>
+            </tbody>
+    </table>
+    
+
+    <!-- <td  class="border py-5 bg-body-secondary d-grid" *ngFor="let item of filteredBranchCodeManager"> 
+        <p class="text-center">{{item}}</p>
+    </td> -->
+    <!-- <td *ngFor="let item of filteredBranchCodeManager">
+        <div class="border py-1 bg-body-secondary" *ngFor="let element of createdJson[item] ">
+            <p>FRM Id - {{element.id}}</p>
+            <p>FRM Name - {{element.name}}</p>
+        </div>
+        </td> -->

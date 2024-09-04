@@ -1,0 +1,78 @@
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>Done</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- <div  >
+    <section class="d-flex">
+    <div class="align-content-center col-4"><p>Branch Code</p>
+    <div class="d-grid gap-4 p-2">
+        <div class="border py-5 bg-body-secondary" *ngFor="let item of filteredBranchCodeManager">
+        <p class="text-center">{{item}}</p>
+        
+        </div>
+    </div>
+    </div>
+    
+    <div class="col-4"><p>FRM</p>
+        <div class="d-grid gap-4 p-2">
+            <div  *ngFor="let item of filteredBranchCodeManager">
+            <div class="border py-1 bg-body-secondary" *ngFor="let element of createdJson[item] ">
+                <p>FRM Id - {{element.id}}</p>
+                <p>FRM Name - {{element.name}}</p>
+            </div>
+        </div>
+        </div>
+     </div>
+    
+     <div class="col-4"><p>kivistars</p>
+        <div class="d-grid gap-4 p-2">
+            <div  *ngFor="let item of filteredBranchCodeManager">
+            <div  *ngFor="let element of createdJson[item] ">
+            <div class="border py-1 bg-body-secondary"  *ngFor="let Kivist of element.kivistars ">
+                <p>Kivistar Id - {{Kivist.id}}</p>
+                <p>Kivistar Name - {{Kivist.name}}</p>
+            </div>
+        </div>
+        </div>
+        
+     </div>
+     </div>
+    </section>
+    </div> -->
+
+    <!-- <div *ngFor="let element of createdJson[item]">
+            <p>FRM Id - {{element.id}}</p>
+            <p>FRM Name - {{element.name}}</p>
+            <div  *ngFor="let Kivist of element.kivistars">
+                <p>Kivistar Id - {{Kivist.id}}</p>
+                <p>Kivistar Name - {{Kivist.name}}</p>
+                <p>Kivistar Reporting to - {{Kivist.reportingTo}}</p>
+            </div>
+        </div> -->
+    
+    <div>
+      <input type="file" />
+    </div>
