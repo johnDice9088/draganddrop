@@ -1,4 +1,3 @@
-import { animate } from '@angular/animations';
 import { Component } from '@angular/core';
 import { elementAt, merge } from 'rxjs';
 import { IKivistar, IcreatedJson, IfulljsonUser, Ifulljsonmanager } from './draganddrop.model';
