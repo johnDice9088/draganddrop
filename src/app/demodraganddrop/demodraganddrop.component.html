@@ -1,4 +1,4 @@
-<div cdkDropListGroup>
+<!-- <div cdkDropListGroup>
     <div class="example-container">
       <h2>To do</h2>
   
@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  
+   -->
 
   <!-- <div  >
     <section class="d-flex">
@@ -73,7 +73,37 @@
             </div>
         </div> -->
     
-    <div>
-      <input type="file" />
-      <img src="">
-    </div>
+        <!-- <input type="file" (change)="onSelectBaseImage($event)"/>
+      
+        <div *ngIf="baseImage" class="base-image-container" style="width: 500px; height: 550px;">
+          <img [src]="baseImage" class="base-image" alt="base" style="width: 500px; height: 550px;" />
+        
+          <input type="file"  (change)="onSelectOverlayImage($event)"/>
+        <div cdkDropListGroup>
+          <div
+            class="overlay-image-container"
+            (mousedown)="onDragStart($event)"
+    (mouseup)="onDragEnd()"
+    (mousemove)="onDrag($event)"
+            >
+            <img *ngIf="overlayImage" [src]="overlayImage" class="overlay-image" alt="overlay" cdkDrag/>
+          </div>
+        </div>
+        </div>
+        
+        <div style="width: 500px; height: 550px;">
+        <button (click)="mergeImages()" *ngIf="overlayImage">Merge Images</button>
+        <img [src]="mergedImage" *ngIf="mergedImage" style="width: 500px; height: 500px;"/>
+      </div>
+   -->
+
+
+   <!-- chatgpt rendered  -->
+   <div>
+    <input type="file" (change)="onFirstImageUpload($event)" accept="image/*" />
+    <input type="file" (change)="onSecondImageUpload($event)" accept="image/*" />
+  </div>
+  <canvas #canvasElement width="800" height="600"></canvas>
+  
+  
+       

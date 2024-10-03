@@ -6,6 +6,7 @@ import { DocviewerComponent } from './docviewer/docviewer.component';
 // import { NewapiComponent } from './newapi/newapi.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NgxDocViewerModule } from 'ngx-doc-viewer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxDocViewerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
