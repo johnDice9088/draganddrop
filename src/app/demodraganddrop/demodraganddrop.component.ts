@@ -197,7 +197,7 @@ export class DemodraganddropComponent {
         let scaleY = canvas.height / overlayImg.height;
   
         // Optional: Maintain aspect ratio by using the smaller scale
-        let widthScaleFactor = 0.55; // Increase width by 10%
+        let widthScaleFactor = 0.38; // Increase width by 10%
         let heightScaleFactor = 0.1 ;
   
         // Calculate the new width and height for the overlay image
