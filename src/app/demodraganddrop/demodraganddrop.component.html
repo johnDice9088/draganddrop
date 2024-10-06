@@ -73,37 +73,38 @@
             </div>
         </div> -->
     
-        <!-- <input type="file" (change)="onSelectBaseImage($event)"/>
-      
-        <div *ngIf="baseImage" class="base-image-container" style="width: 500px; height: 550px;">
-          <img [src]="baseImage" class="base-image" alt="base" style="width: 500px; height: 550px;" />
+        <input type="file" (change)="onSelectBaseImage($event)"/>
+      <div class="d-flex gap-4">
+        <div cdkDropListGroup *ngIf="baseImage" class="base-image-container" style="width: 400px; height: 400px;">
+          <img [src]="baseImage" class="base-image" alt="base" style="width: 400px; height: 400px;"  />
         
-          <input type="file"  (change)="onSelectOverlayImage($event)"/>
-        <div cdkDropListGroup>
+          <input type="file"  (change)="onSelectOverlayImage($event)" />
+        <div   (cdkDragEnded)="onDrag($event)" cdkDrag>
           <div
             class="overlay-image-container"
-            (mousedown)="onDragStart($event)"
-    (mouseup)="onDragEnd()"
-    (mousemove)="onDrag($event)"
+            
+           
             >
-            <img *ngIf="overlayImage" [src]="overlayImage" class="overlay-image" alt="overlay" cdkDrag/>
+            <!-- (cdkDragMoved)="onDrag($event)" -->
+            <img *ngIf="overlayImage" [src]="overlayImage" class="overlay-image" alt="overlay"   >
           </div>
         </div>
         </div>
         
-        <div style="width: 500px; height: 550px;">
+        <div style="width: 400px; height: 400px;">
         <button (click)="mergeImages()" *ngIf="overlayImage">Merge Images</button>
-        <img [src]="mergedImage" *ngIf="mergedImage" style="width: 500px; height: 500px;"/>
+        <img [src]="mergedImage" *ngIf="mergedImage" style="width: 400px; height: 400px;"/>
       </div>
-   -->
+      </div>
+  
 
 
    <!-- chatgpt rendered  -->
-   <div>
+   <!-- <div>
     <input type="file" (change)="onFirstImageUpload($event)" accept="image/*" />
     <input type="file" (change)="onSecondImageUpload($event)" accept="image/*" />
   </div>
-  <canvas #canvasElement width="800" height="600"></canvas>
+  <canvas #canvasElement width="800" height="600"></canvas> -->
   
   
        
